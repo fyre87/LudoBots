@@ -13,11 +13,12 @@ p.setAdditionalSearchPath(pybullet_data.getDataPath())
 #Add gravity
 p.setGravity(0,0,-9.8)
 
-#Add a floor
-planeId = p.loadURDF("plane.urdf")
+#Read files::
+planeId = p.loadURDF("plane.urdf") #Floor
+robotId = p.loadURDF("body.urdf")
 
 #Add a box
-p.loadSDF("boxes.sdf")
+p.loadSDF("world.sdf")
 
 #Run the simulation
 for i in range(0, 1000):
